@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    for letter in my_string:
-        if letter == "c" or letter == "C":
-            continue
-        print(letter, end='')
+    cs = ["c", "C"]
+    new_word = "".join([i for i in my_string if i not in cs])
+    return new_word
