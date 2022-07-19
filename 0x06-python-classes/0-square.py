@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-import sys
+""" class of square """
 class Square:
     """
-        Args:
-        Attributes:
-        """
+    Args:
+    """
     pass
