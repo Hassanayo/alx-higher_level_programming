@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-"""class square"""
-
+"""square"""
 
 class Square:
-    """Square"""
-    def __init__(self, size=0, position=(0, 0)):
-        """Square
-        Args:
-            size(int): size of the square
-            position(int, int): position of square
-        """
+    """Represent a square."""
 
-        self.__size = size
-        self.__position = position
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
+        """
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
+        """Get/set the current size of the square."""
         return (self.__size)
 
     @size.setter
@@ -28,7 +28,7 @@ class Square:
 
     @property
     def position(self):
-        """get and set"""
+        """Get/set the current position of the square."""
         return (self.__position)
 
     @position.setter
@@ -40,18 +40,18 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-    """area"""
     def area(self):
-        """Square
-        Returns:
-            returns the current square area
-        """
+        """Return the current area of the square."""
         return (self.__size * self.__size)
 
     def my_print(self):
-        for i in range(0, self.__size):
-            for j in range(self.__size):
-                print("#", end='')
-            print("")
+        """Print the square with the # character."""
         if self.__size == 0:
+            print("")
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
             print("")
