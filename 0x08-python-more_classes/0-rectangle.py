@@ -2,6 +2,6 @@
 
 
 """defining the class"""
-class Rectange:
+class Rectangle:
     """new rectangle"""
     pass
