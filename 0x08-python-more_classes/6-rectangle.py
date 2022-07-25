@@ -1,22 +1,28 @@
 #!/usr/bin/python3
-"""defining a rect"""
+"""defines a rectangle"""
+
 
 class Rectangle:
-    """reps a rectangle"""
+    """Represent a rectangle.
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+    """
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """init new rectangle
-            
+        """Initialize a new Rectangle.
         Args:
-            width (int): The width of the new rectangle
-            height (int): The height of the rectangle
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.
         """
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get and set the width"""
+        """Get/set the width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -41,12 +47,12 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """area"""
+        """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """perimeter"""
-        if self.__width == 0 or self.height == 0:
+        """Return the perimeter of the Rectangle."""
+        if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
@@ -63,8 +69,14 @@ class Rectangle:
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
+
     def __repr__(self):
-        """string representation of a rectangle"""
+        """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
+
+    def __del__(self):
+        """Print a message for every deletion of a Rectangle."""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
