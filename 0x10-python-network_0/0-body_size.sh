@@ -1,3 +1,3 @@
 #!/bin/bash
-# Make request and display response
-curl -sI "$1" | grep "Content-Length" | cut -d ' ' -f 2
+# takes in a URL, sends a GET request and displays the response.
+curl -sX GET -H "X-School-User-Id: 98" "$1"
